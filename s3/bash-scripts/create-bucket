@@ -10,8 +10,14 @@ fi
 BUCKET_NAME=$1
 
 # https://docs.aws.amazon.com/cli/latest/reference/s3api/create-bucket.html
+#aws s3api create-bucket \
+#--bucket $BUCKET_NAME \
+#--create-bucket-configuration="LocationConstraint=ca-central-1" \
+#--query Location \
+#--output text
+
 aws s3api create-bucket \
---bucket $BUCKET_NAME \
---create-bucket-configuration="LocationConstraint=ca-central-1" \
---query Location \
---output text
+    --bucket $BUCKET_NAME \
+    --region us-east-1 \
+    --query region \
+    --output text

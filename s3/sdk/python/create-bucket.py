@@ -2,10 +2,6 @@ import logging
 import boto3
 from botocore.exceptions import ClientError
 
-import logging
-import boto3
-from botocore.exceptions import ClientError
-
 client = boto3.client('s3')
 
 bucket_name = input("Enter Bucket Name: ")
